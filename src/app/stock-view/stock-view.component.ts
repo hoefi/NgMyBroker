@@ -1,3 +1,4 @@
+import { StockService, Quote } from './../stock.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StockViewComponent implements OnInit {
 
-  constructor() { }
+  quoteList: Quote[] = [];
+
+  constructor(private stockService: StockService) { }
 
   ngOnInit() {
   }
 
+  get currentSymbols() {
+    return this.stockService.currentSymbols;
+  }
 }

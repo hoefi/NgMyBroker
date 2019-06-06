@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StockService } from '../stock.service';
 
 @Component({
   selector: 'app-new-stock',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewStockComponent implements OnInit {
 
-  constructor() { }
+  newStockSymbol = '';
+
+  constructor(private stockService: StockService) { }
 
   ngOnInit() {
+  }
+
+  addStock() {
+    this.stockService.addStock(this.newStockSymbol);
   }
 
 }
