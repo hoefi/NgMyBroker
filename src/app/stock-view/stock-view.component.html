@@ -1,14 +1,14 @@
 <div id="stocks" class="row">
 
-    <div id="cardTemplate" class="col s12 m6">
+    <div *ngFor="let quote of quoteList;" id="cardTemplate" class="col s12 m6" (notifyList)="reloadQuoteList($event)">
         <div class="card hoverable blue darken-1">
             <div class="card-content white-text">
-                <span class="card-title" style="margin-bottom: 0px;">Ticker</span>
-                <div id="DateTime">Last Trade Time</div>
+                <span class="card-title" style="margin-bottom: 0px;">{{quote.name}} ({{quote.symbol}})</span>
+                <div id="DateTime">{{quote.lastTradeDate}} - {{quote.lastTradeTime}}</div>
 
-                <div id="LastTradePrice" class="col s6" style="padding-left: 0;font-size: 22px;">Price</div>
-                <div id="Change" class="col offset-s2 s2">Change</div>
-                <div id="ChangeinPercent" class="col s2">Change Percentage</div>
+                <div id="LastTradePrice" class="col s6" style="padding-left: 0;font-size: 22px;">{{quote.lastTradePriceOnly}} {{quote.currency}}</div>
+                <div id="Change" class="col offset-s2 s2" [style.background-color]="isNegativeValue(quote.change) ? 'red' : 'green'">{{quote.change}}</div>
+                <div id="ChangeinPercent" class="col s2">{{quote.changeinPercent}}</div>
             </div>
             <div class="card-action">
                 <a href="#">Merken</a>
@@ -16,7 +16,4 @@
             </div>
         </div>
     </div>
-
-    <p>Current: {{ currentSymbols }}</p>
-    <p>Quotes: {{ quoteList }}</p>
 </div>

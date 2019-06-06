@@ -3,11 +3,11 @@
         <a id="logo-container" href="#!" class="brand-logo">My Broker</a>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a name="loopBtn" routerLink="/"><i class="large material-icons">loop</i></a></li>
+            <li><a name="loopBtn" (click)="routeOrReload()"><i class="large material-icons">loop</i></a></li>
             <li><a name="addBtn" routerLink="/addStock"><i class="large material-icons">add</i></a></li>
         </ul>
         <ul id="nav-mobile" class="sidenav blue darken-1">
-            <li><a name="loopBtn" routerLink="/" class="white-text"><i class="large material-icons white-text">loop</i>Aktualisieren</a></li>
+            <li><a name="loopBtn" (click)="routeOrReload()" class="white-text"><i class="large material-icons white-text">loop</i>Aktualisieren</a></li>
             <li><a name="addBtn" routerLink="/addStock" class="white-text"><i class="large material-icons white-text">add</i>Hinzufügen</a></li>
         </ul>
     </div>
