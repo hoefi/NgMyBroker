@@ -1,0 +1,65 @@
+angular-cli:
+ng: auf der CLI synonym für Angular
+"code ." --> Öffnet Visual Studio Code mit Projekt im aktuellen Verzeichnis
+
+Erweiterungen für VSCode:
+
+* Angular Language Service
+* Auto Import
+* Debugger for Chrome
+* json2ts
+* Material Icon Theme
+* TSLint
+
+--> .editorconfig: IDE-Unabhaengige Konfiguration
+
+angular.json:   
+		Projekt-Konfig
+		"styles":  "scripts":  --> Konfiguration externern Libs (nicht Standard)
+
+e2e: End2End-Tests (Integrationstests)
+
+karma.conf.js: Unittests
+
+Angular.io --> Styleguide!
+
+codelyzer: Erweiterung für TSLint für Angular
+
+
+im src-Ordner:
+	assets: Für Bilder etc
+	environments: Konfigurationen für unterschiedliche Umgebungen.
+	
+index.html muss normalerweise nicht editiert werden (außer ein paar optische Kleinigkeiten)
+
+polyfills.ts: Unterstützung für unterschiedliche Browser
+
+Module --> Artefakte 
+	AppModule --> ausführbares Modul, gibt es nur einmal --> hat in NgModules eine Bootstrap-Eintrag
+	shared module / feature module --> Bibliotheken
+	
+Component --> eigenes html-Element
+in die *.components.ts --> keine Geschäftslogik
+
+ng generate component todolist --> erstellt eine neue Komponente todolist
+
+MVVM: Model - View - ViewModel
+	Model: Service-Klassen
+	View: *component.html
+	ViewModel: *component.ts
+	
+Direktive: Vorhandenes HTML-Element wird um Logik erweitert
+
+ngModel ersetzt value für bidirektionales Binding. (ist eine Direktive) Schreibweise [(ngModel)] ("Das Runde muss in das Eckige")
+
+Weitere Direktiven:
+	ngFor
+	ngIF
+	ngClass
+
+* vor Direktive: Struktur-Direktive. --> Es kommen nur die Elemnte ins HTML, die auch wirklich gebraucht/angezeigt werden.	
+
+Eckige Klammer --> Attribute
+
+
+Typekonviertierung im Binding sind Pipes.
